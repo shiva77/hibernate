@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2014. 11. 6 ???? 1:32:46 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping package="net.viralpatel.hibernate">
+    <class name="Employee" table="EMPLOYEE">
+        <id name="employeeId" column="EMPLOYEE_ID">
+            <generator class="native" />
+        </id>
+        <one-to-one name="employeeDetail" class="EmployeeDetail" cascade="save-update"/>
+        
+        <property name="firstname"/>
+        <property name="lastname" column="LASTNAME" />
+        <property name="birthDate" type="date" column="BIRTH_DATE" />
+        <property name="cellphone" column="CELL_PHONE" />
+        
+    </class>
+</hibernate-mapping>
